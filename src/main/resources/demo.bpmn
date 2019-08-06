@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_0zgxr7n" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.1.0">
+  <bpmn:process id="demo" name="demo" isExecutable="true">
+    <bpmn:documentation>aaa</bpmn:documentation>
+    <bpmn:startEvent id="StartEvent_1" camunda:asyncBefore="true" camunda:asyncAfter="true">
+      <bpmn:outgoing>SequenceFlow_0ztn3d6</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_0ztn3d6" sourceRef="StartEvent_1" targetRef="Task_1sccqqi" />
+    <bpmn:endEvent id="EndEvent_1gl3xyj">
+      <bpmn:incoming>SequenceFlow_1qstf4l</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_1qstf4l" sourceRef="Task_1sccqqi" targetRef="EndEvent_1gl3xyj" />
+    <bpmn:serviceTask id="Task_1sccqqi" name="Write something" camunda:asyncBefore="true" camunda:class="com.camunda.training.CreateTweetDelegate">
+      <bpmn:documentation>a</bpmn:documentation>
+      <bpmn:incoming>SequenceFlow_0ztn3d6</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1qstf4l</bpmn:outgoing>
+    </bpmn:serviceTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="demo">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="179" y="103" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0ztn3d6_di" bpmnElement="SequenceFlow_0ztn3d6">
+        <di:waypoint x="215" y="121" />
+        <di:waypoint x="340" y="121" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="EndEvent_1gl3xyj_di" bpmnElement="EndEvent_1gl3xyj">
+        <dc:Bounds x="540" y="103" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1qstf4l_di" bpmnElement="SequenceFlow_1qstf4l">
+        <di:waypoint x="440" y="121" />
+        <di:waypoint x="540" y="121" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ServiceTask_135p050_di" bpmnElement="Task_1sccqqi">
+        <dc:Bounds x="340" y="81" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

@@ -1,0 +1,13 @@
+spring.datasource:
+  url: jdbc:h2:./camunda-db;DB_CLOSE_DELAY=-1;MVCC=TRUE;DB_CLOSE_ON_EXIT=FALSE
+  username: sa
+  password: sa
+spring.h2.console.enabled: true
+camunda.bpm:
+  job-execution.max-jobs-per-acquisition: 3
+  job-execution.core-pool-size: 1
+  job-execution.queue-capacity: 3
+  job-execution.max-pool-size: 5
+  job-execution.wait-time-in-millis: 10000
+  job-execution.max-wait: 60000
+server.port: 8080
