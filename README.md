@@ -1,3 +1,3 @@
 # twitter-qa
-Template for the Camunda Training for Java Developers
-# http://localhost:8080/h2-console
+sup-6163 csrf prevention filter not working
+
